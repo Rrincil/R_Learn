@@ -1,0 +1,5 @@
+#library(RMySQL)
+conn <- dbConnect(MySQL(), dbname = "r_learndb", username="root", password="WangYi..191",client.flag=CLIENT_MULTI_STATEMENTS)
+users = dbGetQuery(conn, "SELECT * FROM users")
+dbDisconnect(conn)
+print(users)
