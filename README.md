@@ -238,6 +238,51 @@ print(b)
 ```
 - 2.subset()函数 subset() 函数是返回符合条件的元素，但会忽略NA值。注意：条件应为逻辑值，否则会报错
 ```R
+a <- c(1,2,4,5,NA)
+b <- subset(a,a>2) #忽略NA
+print(a[a>3])  #不忽略NA
+print(b)
+```
+- 3. ifelse(x,a,b)函数判断元素x是否符合条件，如符合，返回a，若不符合，返回b。其中x为逻辑值
+```R
+a <- c(1,2,4,5,NA,NULL)
+b <- ifelse(a>3,1,0)
+c <- ifelse(a>3,"是","否")
+print(b)
+print(c)
+cat(length(a))
+```
+#### ***2.86 判断两个向量是否相等的函数***
+- all()函数 ，返回逻辑值，identical（）函数，判断两向量是否相等，返回逻辑值
+```R
+> d1<-c(1,5,7,9)
+> d2<-c(1,5,7,9)
+> d3<-c(2,4,7,9)
+> d4<-1:5
+> d5<-c(1,2,3,4,5)
+> all(d1,d2)    #判断d1与d2是否相等，返回了TRUE，但是出现了警告
+[1] TRUE
+Warning messages:
+1: In all(d1, d2) : coercing argument of type 'double' to logical
+2: In all(d1, d2) : coercing argument of type 'double' to logical
+> all(d1,d3)    #判断d1与d3是否相等，返回了TRUE，但是出现了警告
+[1] TRUE
+Warning messages:
+1: In all(d1, d3) : coercing argument of type 'double' to logical
+2: In all(d1, d3) : coercing argument of type 'double' to logical
+> identical(d1,d2)    #判断d1与d2是否相等，返回了TRUE
+[1] TRUE
+> identical(d1,d3)    #判断d1与d3是否相等，返回了FALSE
+[1] FALSE
+> all(d4,d5)     #判断d4与d5是否相等，返回了TRUE，但是出现了警告
+[1] TRUE
+Warning message:
+In all(d4, d5) : coercing argument of type 'double' to logical
+> identical(d4,d5)   #判断d4与d5是否相等，返回了FALSE
+[1] FALSE
+>
+>  #在对比d4与d5时，all与identical出现了不同的结果，虽然内容相同，但是定义向量的方式不同，有区别，
+>   #这是all与identcal的主要区别。
 
 ```
 
