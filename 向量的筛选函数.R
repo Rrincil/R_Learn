@@ -17,6 +17,8 @@ print(b)
 print(c)
 cat(length(a))
 #
+a.h <- 2
+print(a.h)
 
 
 

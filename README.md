@@ -1,6 +1,8 @@
 # R_Learn
-学习R语言
+
+学习R语言 
 # 1. 基础知识
+
 ``` r
 # 1. 设置工作目录 getwd(),setwd()
 
@@ -103,7 +105,9 @@ print(exp(1)) # exp() 指数
 ```
 
 # 2. 基础语法
+
 ## 2.1 向量
+
 ### 2.1 向量的创建 1. c(), 2. vector
 
 ``` r
@@ -183,37 +187,52 @@ x4 <- c(12,4,T,F) #mode(x3)为"numeric"
 x5 <- as.character(x4) #数字转字符
 #as.numeric(x3) #字符转数字
 ```
+#### 2.6.5 sample()随机函数，抽样函数
+
+-   Sample函数从x的元素中提取指定大小的样本，使用替换或不替换，默认不替换。prob：用于获取被采样矢量的元素的概率权重向量
+
+``` r
+
+```
 
 ### 2.7 向量的计算
+
 #### 2.7.1 向量的加减
-```R
+
+``` r
 a
 ```
+
 ### 2.8 相关函数
 
 #### 2.8.1 等差数列 seq(from,to,by)
-a <- seq(from = 1,to = 10,by = 3)  # "double"类型
-b <- seq(1,6,3)
-print(a)
+```R
+a <- seq(from = 1,to = 10,by = 3) # "double"类型 
+b<- seq(1,6,3) 
+print(a) 
 print(b)
-
+```
 #### 2.8.2 重复函数 rep(x,time):x重复time次；rep(x,each):x中的每个连续重复each次依次排列，不写each或者time默认为time
-a <- c(1,2,3)
-b <- rep(a,time = 2)
-c <- rep(a,each = 2)
-d <- rep(a,2) #不写each或者time默认为time
-print(d)
+```R
+a <- c(1,2,3) 
+b <- rep(a,time = 2) 
+c <- rep(a,each = 2) 
+d <- rep(a,2) #不写each或者time默认为time print(d)
+```
+#### 2.8.3 逻辑判断
 
-#### 2.8.3 逻辑判断 
-- all()，判断元素是否都符合条件，返回逻辑值 ，只要有一个不满足，返回FALSE，看如下代码：
-- any()，判断是否有元素满足条件
-```r
+-   all()，判断元素是否都符合条件，返回逻辑值 ，只要有一个不满足，返回FALSE，看如下代码：
+-   any()，判断是否有元素满足条件
+
+``` r
 a <- c(1,2,3)
 print(all(a>2)) #返回FALSE
 print(any(a>2)) #返回TRUE
 ```
-- match()，意为匹配的意思，例如：match(A,B),判断向量A的元素在向量B里是否有，若有则返回在B中的位置，若没有，则返回NA；两向量长度不等时，循环补齐时判断，要注意时哪一个向量要循环，
-```r
+
+-   match()，意为匹配的意思，例如：match(A,B),判断向量A的元素在向量B里是否有，若有则返回在B中的位置，若没有，则返回NA；两向量长度不等时，循环补齐时判断，要注意时哪一个向量要循环，
+
+``` r
 a <- c(1,2,3)
 b <- c(2,4,3)
 c <- c(1,6,3,4)
@@ -221,30 +240,43 @@ print(match(a,b)) #返回NA  1  3
 print(match(a,c)) #返回 1 NA  3
 print(match(c,a)) #返回 1 NA  3 NA
 ```
+
 #### 2.8.4 NA与NULL值
-- NA表示存在但未知的数，NULL代表不存在的数
-```R
+
+-   NA表示存在但未知的数，NULL代表不存在的数
+
+``` r
 mean(c(3,5,7,9,NA))  #存在NA值，无法确定NA值的大小，返回结果也未知
 mean(c(3,5,7,9,NA),na.rm=T)  #把NA值删掉
 mean(c(3,5,7,9,NULL))   #NULL值根本不存在，不影响结果
 ```
 
 #### ***2.8.5 向量的筛选函数***
-- 1. which()函数which() 返回满足条件元素的位置
-```R
+
+-   
+
+    1.  which()函数which() 返回满足条件元素的位置
+
+``` r
 a <- c(1,3,5,6)
 b <- which(a==3)
 print(b)
 ```
-- 2.subset()函数 subset() 函数是返回符合条件的元素，但会忽略NA值。注意：条件应为逻辑值，否则会报错
-```R
+
+-   2.subset()函数 subset() 函数是返回符合条件的元素，但会忽略NA值。注意：条件应为逻辑值，否则会报错
+
+``` r
 a <- c(1,2,4,5,NA)
 b <- subset(a,a>2) #忽略NA
 print(a[a>3])  #不忽略NA
 print(b)
 ```
-- 3. ifelse(x,a,b)函数判断元素x是否符合条件，如符合，返回a，若不符合，返回b。其中x为逻辑值
-```R
+
+-   
+
+    3.  ifelse(x,a,b)函数判断元素x是否符合条件，如符合，返回a，若不符合，返回b。其中x为逻辑值
+
+``` r
 a <- c(1,2,4,5,NA,NULL)
 b <- ifelse(a>3,1,0)
 c <- ifelse(a>3,"是","否")
@@ -252,9 +284,12 @@ print(b)
 print(c)
 cat(length(a))
 ```
+
 #### ***2.86 判断两个向量是否相等的函数***
-- all()函数 ，返回逻辑值，identical（）函数，判断两向量是否相等，返回逻辑值
-```R
+
+-   all()函数 ，返回逻辑值，identical（）函数，判断两向量是否相等，返回逻辑值
+
+``` r
 > d1<-c(1,5,7,9)
 > d2<-c(1,5,7,9)
 > d3<-c(2,4,7,9)
@@ -283,7 +318,28 @@ In all(d4, d5) : coercing argument of type 'double' to logical
 >
 >  #在对比d4与d5时，all与identical出现了不同的结果，虽然内容相同，但是定义向量的方式不同，有区别，
 >   #这是all与identcal的主要区别。
+```
+## 2.2 矩阵
+### 2.2.1 矩阵的创建
+- 1. matrix(data = NULL,nrow = 1,ncol = 1,byrow = False,dimnames = NULL)
+```r
+a <- matrix(1:20,nrow = 4,byrow = TRUE)
+print(a)
+```
+- 2. 利用函数将向量接起来，函数有rbind()按行接起来、cbind()按列接起来。
+```r
+a <- c(1,2,4)
+b <- 1:3
+c <- rbind(a,b) #按行拼接
+print(c) # 用print()函数可以在控制台按照矩阵显示，cat()不行
+cat("按行拼接",c)
+c <- cbind(a,b)  #按列拼接
+cat("按列拼接",c)
 
 ```
+
+
+
+
 
 
