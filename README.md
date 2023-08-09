@@ -360,7 +360,11 @@ print(a)
 a <- matrix(nrow = 2,ncol = 3)
 print(a)
 ```
-
+> (3) 创建时候出现不同类型元素,会转化为统一类型
+```r
+a <- matrix(c(1,"你好",NULL,TRUE,NA),nrow = 2,byrow = T)
+print(a)
+```
 
 
 

@@ -35,7 +35,9 @@ print(a)
 # 2. 创建一个空矩阵(出现警告)
 a <- matrix(nrow = 2,ncol = 3)
 print(a)
-
+# 3. 不同类似元素
+a <- matrix(c(1,"你好",NULL,TRUE,NA),nrow = 2,byrow = T)
+print(a)
 
 
 
