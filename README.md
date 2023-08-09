@@ -364,6 +364,9 @@ print(a)
 ```r
 a <- matrix(c(1,"你好",NULL,TRUE,NA),nrow = 2,byrow = T)
 print(a)
+##   [,1]   [,2]  
+[1,] "1"    "你好"
+[2,] "TRUE"  NA 
 ```
 
 

@@ -4,6 +4,7 @@ a1 <- c(1,3,5,7,9)
 b <- sample(a,3)
 b1 <- sample(a1,3)
 cat("随机数",b,'\n',"随机数",b1,"\n")
+
 # 矩阵的创建
 # 1. matrix(data = NULL,nrow = 1,ncol = 1,byrow = False,dimnames = NULL)
 a <- matrix(1:20,nrow = 4,byrow = TRUE)
@@ -39,6 +40,27 @@ print(a)
 a <- matrix(c(1,"你好",NULL,TRUE,NA),nrow = 2,byrow = T)
 print(a)
 
+# 矩阵的索引
+print("----------------------")
+a <- matrix(1:6,nrow = 2,byrow = T,dimnames = list(c("r1","r2"),c("l1","l2","l3")))
+print(a)
+print(a[2,3])#索引第二行第三列的元素
+print(a[2,-3]) ##返回第2行,但排除第3列元素
+print(a[2,])# 第二行的元素,返回的类型是integer
+cat(class(a[2,]))
+print(a[,1]) #第一列的元素
+print(a[]) # 整个矩阵
+cat("行列名索引",a["r1",])# 按照行列名字索引
+print(a["r1","l2"])
+## 多行(列)索引
+print("-------")
+print(a[c(1,2),c(2,3)]) #索引第一,二行,第二,三列
+print(a[c("r1","r2"),c("l1","l2")])
+print(a[c(1,2),-c(2,3)]) #索引第一,二行,但排除第二,三列
 
-
+# 矩阵的相关函数
+print("-------------")
+a[1,]
+print(a[1,])#1  2  3 
+print(a[1,,drop = F]) #不会变为integer,类型仍然为矩阵
 
