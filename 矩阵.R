@@ -63,4 +63,20 @@ print("-------------")
 a[1,]
 print(a[1,])#1  2  3 
 print(a[1,,drop = F]) #不会变为integer,类型仍然为矩阵
-
+print(class(a[1,,drop = F]))
+# 转置矩阵
+print("---------------")
+b <- t(a)
+print(b)
+# 合并矩阵
+a <- matrix(1:6,nrow = 2,byrow = T)
+b <- matrix(6:12,nrow = 2,byrow = T)
+b1 <- matrix(6:11,nrow = 2,byrow = T)
+print(a)
+print(b)
+print(b1)
+c <- cbind(a,b) #按行拼接
+#c2 <- rbind(a,b) #按列拼接,不同列会报错.
+c3 <- rbind(a,b1) #按列拼接,不同列会报错.
+print(c)
+print(c3)
