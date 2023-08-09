@@ -17,3 +17,26 @@ print(c) # 用print()函数可以在控制台按照矩阵显示，cat()不行
 cat("按行拼接",c)
 c <- cbind(a,b)
 cat("按列拼接",c)
+# 3. 强制转化 as.matrix()
+a <- c(1,3,5,6,8)
+b <- as.matrix(a)
+cat("强制转化\n")
+print(b)
+
+#cat("强制转化",b)
+
+# 4. 创建行列名
+c <- matrix(1:6,nrow = 2,byrow = T,dimnames = list(c("r1","r2"),c("l1","l2","l3")))#dimnames(list(先行后列))
+print(c)
+# 5. 注意事项
+# 1. 循环补齐(出现警告)
+a <- matrix(1:4,nrow = 2,ncol = 3,byrow = T)
+print(a)
+# 2. 创建一个空矩阵(出现警告)
+a <- matrix(nrow = 2,ncol = 3)
+print(a)
+
+
+
+
+

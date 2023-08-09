@@ -337,7 +337,29 @@ c <- cbind(a,b)  #按列拼接
 cat("按列拼接",c)
 
 ```
-
+- 3. 强制转化 as.matrix()
+```R
+a <- c(1,3,5,6,8)
+b <- as.matrix(a)
+cat("强制转化\n")
+print(b)
+```
+- 4. 创建行列名
+```r
+c <- matrix(1:6,nrow = 2,byrow = T,dimnames = list(c("r1","r2"),c("l1","l2","l3")))#dimnames(list(先行后列))
+print(c)
+```
+- 5. 注意事项
+> (1) 创建矩阵,数据不够,循环补齐
+```r
+a <- matrix(1:4,nrow = 2,ncol = 3,byrow = T)
+print(a)
+```
+> (2) 创建一个空矩阵(出现警告)
+```r
+a <- matrix(nrow = 2,ncol = 3)
+print(a)
+```
 
 
 
