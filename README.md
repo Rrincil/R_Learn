@@ -408,7 +408,27 @@ print(b)
 ```
 > (2). 横向或纵向合并矩阵
 ```r
-
+a <- matrix(1:6,nrow = 2,byrow = T)
+b <- matrix(6:12,nrow = 2,byrow = T)
+b1 <- matrix(6:11,nrow = 2,byrow = T)
+print(a)
+print(b)
+print(b1)
+c <- cbind(a,b) #按行拼接
+#c2 <- rbind(a,b) #按列拼接,不同列会报错.
+c3 <- rbind(a,b1) #按列拼接,不同列会报错.
+print(c)
+print(c3)
+```
+> (3). 3.对各列或行求和或求均值
+- colSums()对各列求和，rowSums()对各行求和,colMeans()对各列求均值，rowMeans()对各行求均值
+```r
 ```
 
+- 3. 计算行列式
 
+## 2.3 列表
+### 2.3.1 列表的创建
+```r
+
+```
