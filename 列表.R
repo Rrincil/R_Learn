@@ -22,6 +22,10 @@ print(a)
 ## 4.1 ***lapply()函数 ***
 lapply(a, mean)
 
+## 4.2 sapply()函数  与lapply()一样，只是返回的结果类型是向量
+
+
+
 
 
 
