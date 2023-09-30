@@ -79,6 +79,32 @@ re1 <- subset(x,V4 >= 18 & V3 == '男', c('V1','V2'))
 print(class(re1))  #"data.frame"
 print(re1)
 
+## 5. 使用SQL查询语句
+
+## 6. 遍历数据框的每一个值
+a <- dim(x)[1]
+b <- dim(x)[2]
+for (i in 1:a) {
+  for (j in 1:b) {
+    print(x[i,j])
+  }
+}
+
+## 7. 使用table函数获得统计量
+
+## 8. 数据框
+### (1)增加新列
+x$V5 <- c('ccupy','老师','学生','学生','学生','学生')
+print(x)
+cat('\n======\n')
+### (2) 删除列 subset()
+subset(x,select = -V1)
+print(x)
+x[,-5]  # 删除第五列
+print(x)
+
+
+
 
 
 
