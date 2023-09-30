@@ -51,6 +51,16 @@ print(nrow(x))
 print(ncol(x)) 
 
 
+###  (4)  获取数据框的结构信息 str()
+print(str(x))
+
+### (5) 返回数据框的前几行与后几行的数据 head(x,2) tail(x, 3)
+print(head(x,2)) #  返回前两的数据
+print(tail(x,2)) # 返回后两行的数据
+cat("\n=========\n")
+## 3. 数据框的索引 
+print(x[1,])  # 索引的是第一列
+#print(x['A',])  # 
 
 
 
