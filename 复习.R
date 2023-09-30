@@ -7,4 +7,7 @@ c0 = sample(1:10,6,T)
 c = matrix(c0,3,2,T)
 cat('co的值为：',c0,'\n')
 print(c)
-cat('c的值为：',c)
+cat('c的值为：',c,'\n')
+
+a <- matrix(c('x','y','z',1,2,3), , 2,T,list(c('c1','c2','c3'),c('r1','r2')))
+print(a)
