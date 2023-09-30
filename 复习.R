@@ -9,5 +9,7 @@ cat('co的值为：',c0,'\n')
 print(c)
 cat('c的值为：',c,'\n')
 
-a <- matrix(c('x','y','z',1,2,3), , 2,T,list(c('c1','c2','c3'),c('r1','r2')))
+a <- matrix(c('x','y','z',1,2,3),2,,T,list(c('r1','r2'),c('c1','c2','c3')))
 print(a)
+cat('索引两行两列的元素：',a[c(1,2),c(1,2)])
+
