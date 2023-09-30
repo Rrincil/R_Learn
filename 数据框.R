@@ -70,10 +70,14 @@ cat('\n==================\n')
 print(x[which(x$V2 == '李小明'),])  # 查找所有姓名为李小明的那一行的数据
 print(x[which(x$V4 >= 18),])  # 查找所有大于等于18的数据
 print(x[which(x$V3 == '男'),])  # 查找所有男生的数据
+cat('\n==========\n')
+# 查找 所有大于18岁 并且 是男生 的人的姓名
+print(x[which(x$V4 >= 18 & x$V3 == '男'),'V2'])
 
-
-
-
+### (2) subset() 函数过滤
+re1 <- subset(x,V4 >= 18 & V3 == '男', c('V1','V2'))
+print(class(re1))  #"data.frame"
+print(re1)
 
 
 
