@@ -123,7 +123,31 @@ print(m)
 
 ### (2) 使用cbind() 和rbind() 连接
 
+#### 2.1 cbind() 横向连接=》列更多  **行数必须相同，不够会自动补齐**没有外键关联
+m2 = cbind(x,score)
+print(m2)
 
+#### 2.2 rbind 纵向连接=》行更多 
+score2 <- data.frame(
+  V1 = c('F','G'),
+  V2 = c('小红','小绿'),
+  V3 = c('女','男'),
+  V4 = c(24,25),
+  V5 = c('学生','老师')
+)
+m3 = rbind(x,score2)
+print(m3)
+print('=================')
+### (3) 拆分数据框 split
+#### 3.1 按照性别拆分成两个数据框
+m4  <- split(x,x$V3)
+print(m4$男)
+print(class(m4)) #"list"  
+print(class(m4$男)) #"data.frame"
+print(m4[2]) # 从1开始
+
+
+## 10. 求数据框的各种平均值
 
 
 
